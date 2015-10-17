@@ -1,8 +1,13 @@
 package jnaalisv;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class HibernateDemo {
 
+    private static final Logger logger = LoggerFactory.getLogger(HibernateDemo.class);
+
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        logger.info("Hello, World!");
     }
 }
