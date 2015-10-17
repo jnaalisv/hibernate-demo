@@ -1,0 +1,5 @@
+#topics:
+- hibernate 
+- jpa
+- transactions
+
