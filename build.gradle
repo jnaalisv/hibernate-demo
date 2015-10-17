@@ -1,3 +1,7 @@
+apply plugin: JavaPlugin
+apply plugin: ApplicationPlugin
+
+mainClassName = "jnaalisv.HibernateDemo"
 
 task wrapper(type: Wrapper) {
     gradleVersion = "2.7"
