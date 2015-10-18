@@ -7,4 +7,5 @@ appender("STDOUT", ConsoleAppender) {
 root(INFO, ["STDOUT"])
 
 logger("jnaalisv", INFO)
+logger("org.hibernate", INFO)
 
