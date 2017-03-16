@@ -3,8 +3,8 @@ apply plugin: ApplicationPlugin
 
 mainClassName = "jnaalisv.HibernateDemo"
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "2.7"
+wrapper {
+    gradleVersion = "3.4.1"
 }
 
 project.ext {
