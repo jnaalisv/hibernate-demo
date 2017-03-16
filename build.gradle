@@ -11,8 +11,8 @@ project.ext {
     slf4jVersion = "1.7.24"
     logbackVersion = "1.2.1"
     groovyVersion = "2.4.9"
-
-    hibernateVersion = "5.0.2.Final"
+    hibernateVersion = "5.2.8.Final"
+    hikariCPVersion = "2.6.1"
 }
 
 repositories {
@@ -20,11 +20,18 @@ repositories {
 }
 
 dependencies {
-    runtime "org.codehaus.groovy:groovy:$groovyVersion"
-    runtime "ch.qos.logback:logback-classic:$logbackVersion"
-    runtime 'com.h2database:h2:1.4.190'
 
-    compile "org.slf4j:slf4j-api:$slf4jVersion"
-    compile "org.hibernate:hibernate-core:$hibernateVersion"
+    runtime (
+            "org.codehaus.groovy:groovy:$groovyVersion",
+            "ch.qos.logback:logback-classic:$logbackVersion",
+            "com.h2database:h2:1.4.193"
+    )
+
+    compile (
+            "org.slf4j:slf4j-api:$slf4jVersion",
+            "org.hibernate:hibernate-core:$hibernateVersion",
+            "org.hibernate:hibernate-hikaricp:$hibernateVersion",
+            "com.zaxxer:HikariCP:$hikariCPVersion"
+    )
 }
 
