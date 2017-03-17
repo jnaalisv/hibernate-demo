@@ -8,8 +8,8 @@ wrapper {
 }
 
 project.ext {
-    slf4jVersion = "1.7.24"
-    logbackVersion = "1.2.1"
+    slf4jVersion = "1.7.25"
+    logbackVersion = "1.2.2"
     groovyVersion = "2.4.9"
     hibernateVersion = "5.2.8.Final"
     hikariCPVersion = "2.6.1"
@@ -24,7 +24,7 @@ dependencies {
     runtime (
             "org.codehaus.groovy:groovy:$groovyVersion",
             "ch.qos.logback:logback-classic:$logbackVersion",
-            "com.h2database:h2:1.4.193"
+            "com.h2database:h2:1.4.194"
     )
 
     compile (
