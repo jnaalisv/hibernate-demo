@@ -4,7 +4,7 @@ apply plugin: ApplicationPlugin
 mainClassName = "jnaalisv.HibernateDemo"
 
 wrapper {
-    gradleVersion = "3.5"
+	    gradleVersion = "4.4.1"
 }
 
 project.ext {
