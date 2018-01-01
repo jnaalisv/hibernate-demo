@@ -1,5 +1,8 @@
-apply plugin: JavaPlugin
-apply plugin: ApplicationPlugin
+plugins {
+    id "java"
+    id "application"
+}
+
 
 mainClassName = "jnaalisv.HibernateDemo"
 
@@ -12,7 +15,7 @@ project.ext {
     logbackVersion = "1.2.2"
     groovyVersion = "2.4.9"
     hibernateVersion = "5.2.8.Final"
-    hikariCPVersion = "2.6.1"
+    hikariCPVersion = "2.7.4"
 }
 
 repositories {
