@@ -14,7 +14,7 @@ project.ext {
     slf4jVersion = "1.7.25"
     logbackVersion = "1.2.2"
     groovyVersion = "2.4.9"
-    hibernateVersion = "5.2.8.Final"
+    hibernateVersion = "5.2.12.Final"
     hikariCPVersion = "2.7.4"
 }
 
