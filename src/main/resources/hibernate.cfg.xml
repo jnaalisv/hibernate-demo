@@ -11,11 +11,11 @@
         <property name="hibernate.hikari.minimumIdle">5</property>
         <property name="hibernate.hikari.maximumPoolSize">10</property>
         <property name="hibernate.hikari.idleTimeout">30000</property>
-        <property name="connection.url">jdbc:h2:mem:test;MODE=MySQL;</property>
+        <property name="connection.url">jdbc:h2:mem:test;MODE=PostgreSQL;</property>
         <property name="connection.username">sa</property>
         <property name="connection.password"></property>
         <property name="connection.pool_size">1</property>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
 
         <property name="current_session_context_class">thread</property> <!-- Enable Hibernate's automatic session context management -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
