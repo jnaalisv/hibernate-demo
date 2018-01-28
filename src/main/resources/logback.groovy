@@ -9,8 +9,8 @@ appender("STDOUT", ConsoleAppender) {
 root(INFO, ["STDOUT"])
 
 logger("jnaalisv", INFO)
-logger("org.hibernate", TRACE)
-//logger("org.hibernate.SQL", DEBUG)
-//logger("org.hibernate.type.descriptor.sql.BasicBinder", TRACE)
-//logger("org.hibernate.tool.hbm2ddl.SchemaExport", DEBUG)
+logger("org.hibernate", INFO)
+logger("org.hibernate.SQL", DEBUG)
+logger("org.hibernate.type.descriptor.sql.BasicBinder", TRACE)
+logger("org.hibernate.tool.hbm2ddl.SchemaExport", DEBUG)
 
