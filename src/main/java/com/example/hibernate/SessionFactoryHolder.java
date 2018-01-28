@@ -1,6 +1,5 @@
-package jnaalisv;
+package com.example.hibernate;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -8,38 +7,19 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jnaalisv.domain.Customer;
+public final class SessionFactoryHolder {
+    private static final Logger logger = LoggerFactory.getLogger(SessionFactoryHolder.class);
 
-public class HibernateDemo {
+    private static final SessionFactory sessionFactory;
 
-    private static final Logger logger = LoggerFactory.getLogger(HibernateDemo.class);
-
-    public static void main(String[] args){
-
-        SessionFactory sessionFactory = create();
-        Session session = sessionFactory.openSession();
-
-        session.beginTransaction();
-
-        Customer regularCustomer = new Customer("Regular Customer");
-
-        session.save(regularCustomer);
-
-        session.getTransaction().commit();
-        session.close();
-
-
-        System.exit(0);
-    }
-
-    private static SessionFactory create() {
+    static {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
                 // .loadProperties would read from std properties file
                 .build();
         try {
-            return new MetadataSources( registry ).buildMetadata().buildSessionFactory();
+            sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
         }
         catch (Exception e) {
             // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
@@ -49,4 +29,10 @@ public class HibernateDemo {
             throw new RuntimeException(e);
         }
     }
+
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    private SessionFactoryHolder() {}
 }

@@ -1,9 +1,6 @@
 plugins {
     java
-    application
 }
-
-application.mainClassName = "jnaalisv.HibernateDemo"
 
 repositories {
     jcenter()
@@ -21,4 +18,7 @@ dependencies {
     compile ("org.hibernate:hibernate-core:$hibernateVersion")
     compile ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
     compile ("com.zaxxer:HikariCP:$hikariCpVersion")
+
+    testCompile ("junit:junit:4.12")
+    testCompile ("org.assertj:assertj-core:3.9.0")
 }

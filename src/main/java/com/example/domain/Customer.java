@@ -1,4 +1,4 @@
-package jnaalisv.domain;
+package com.example.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,5 +18,9 @@ public class Customer {
 
     public Customer(String name) {
         this.name = name;
+    }
+
+    public long getId() {
+        return id;
     }
 }
