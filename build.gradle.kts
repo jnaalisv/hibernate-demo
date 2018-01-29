@@ -22,4 +22,9 @@ dependencies {
     testRuntime ("com.zaxxer:HikariCP:$hikariCpVersion")
     testRuntime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
     testRuntime ("ch.qos.logback:logback-classic:1.2.3")
+
+    // Java EE modules used to be included with the JRE. They were deprecated in Java SE 9 with the
+    // declared intent to remove them in a future release.
+    testRuntime ("org.glassfish.jaxb:jaxb-runtime:2.3.0") // JAXB (JSR 222) Reference Implementation
+    testRuntime ("javax.activation:activation:1.1.1") // JSR-925 Java Beans Activation Framework
 }
