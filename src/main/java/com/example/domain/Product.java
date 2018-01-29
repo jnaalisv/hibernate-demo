@@ -2,8 +2,10 @@ package com.example.domain;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Entity(name ="product")
+@Entity
+@Table(name = "product")
 public class Product {
 
     @EmbeddedId

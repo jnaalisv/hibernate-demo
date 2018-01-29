@@ -30,7 +30,7 @@ public class ProductTest extends AbstractHibernateTest {
 
     @Test
     public void shouldSaveAndFetchAProduct() {
-        assertExistsById("Product", product.getId());
+        assertRowsInTable("product", product.getId().getValue(), 1);
 
         doInTransaction(session -> {
             Product product1 = session.find(Product.class, product.getId());
