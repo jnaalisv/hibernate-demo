@@ -1,6 +1,8 @@
 package com.example.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
@@ -8,12 +10,14 @@ import java.util.UUID;
 @Embeddable
 public class ProductId implements Serializable {
 
-    private String id;
+    @GeneratedValue
+    @Column( columnDefinition = "uuid", updatable = false, name = "id" )
+    private UUID value;
 
     private ProductId() {/* for hibernate */}
 
-    public ProductId(UUID uuid) {
-        this.id = uuid.toString();
+    private ProductId(UUID value) {
+        this.value = value;
     }
 
     public static ProductId generateNew() {
@@ -22,7 +26,7 @@ public class ProductId implements Serializable {
 
     @Override
     public String toString() {
-        return id.toString();
+        return value.toString();
     }
 
     @Override
@@ -31,13 +35,13 @@ public class ProductId implements Serializable {
             return true;
         }
         if (other instanceof ProductId) {
-            return Objects.equals(id, id);
+            return Objects.equals(((ProductId)other).value, value);
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(value);
     }
 }

@@ -21,14 +21,14 @@ public abstract class AbstractHibernateTest {
         assertRowsInTable(tableName, "id="+id, 1);
     }
 
-    protected static void assertExistsById(String tableName, String id) {
+    protected static void assertExistsById(String tableName, Object id) {
         assertRowsInTable(tableName, "id='"+id+"'", 1);
     }
 
     protected static void assertRowsInTable(String tableName, String where, int expectedRows) {
         doInTransaction(session -> {
             List rows = session
-                    .createNativeQuery("select * from "+tableName+" where "+where)
+                    .createQuery("from "+tableName+" where "+where)
                     .list();
 
             assertThat(rows.size()).isEqualTo(expectedRows);

@@ -9,13 +9,13 @@ public class CustomerTest extends AbstractHibernateTest {
     public void shouldPersistCustomerAndGenerateNewId() {
         Customer regularCustomer = new Customer("Regular Customer");
 
-        assertTableEmpty("customer");
+        assertTableEmpty("Customer");
 
         doInTransaction(session -> {
             session.save(regularCustomer);
         });
 
-        assertExistsById("customer", regularCustomer.getId());
+        assertExistsById("Customer", regularCustomer.getId());
     }
 
 }

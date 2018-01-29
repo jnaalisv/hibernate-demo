@@ -11,13 +11,13 @@ public class ProductTest extends AbstractHibernateTest {
     public void shouldSaveAndFetchAProduct() {
         Product product = new Product("Ferrite Memory Cell");
 
-        assertTableEmpty("product");
+        assertTableEmpty("Product");
 
         doInTransaction(session -> {
             session.save(product);
         });
 
-        assertExistsById("product", product.getId().toString());
+        assertExistsById("Product", product.getId());
 
         doInTransaction(session -> {
             Product product1 = session.find(Product.class, product.getId());
