@@ -23,6 +23,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <mapping class="com.example.domain.Customer" />
+        <mapping class="com.example.domain.Product" />
 
     </session-factory>
 
