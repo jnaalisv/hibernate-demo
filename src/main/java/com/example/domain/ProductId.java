@@ -44,4 +44,8 @@ public class ProductId implements Serializable {
     public int hashCode() {
         return Objects.hashCode(value);
     }
+
+    public UUID getValue() {
+        return value;
+    }
 }
