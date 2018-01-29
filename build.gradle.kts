@@ -9,6 +9,7 @@ repositories {
 val hibernateVersion by extra {"5.2.12.Final"}
 val postgreSqlVersion by extra {"42.2.1"}
 val hikariCpVersion by extra {"2.7.6"}
+val jaxbVersion by extra {"2.3.0"}
 
 dependencies {
 
@@ -25,6 +26,9 @@ dependencies {
 
     // Java EE modules used to be included with the JRE. They were deprecated in Java SE 9 with the
     // declared intent to remove them in a future release.
-    testRuntime ("org.glassfish.jaxb:jaxb-runtime:2.3.0") // JAXB (JSR 222) Reference Implementation
+    testRuntime ("javax.xml.bind:jaxb-api:$jaxbVersion") // JAXB (JSR 222) Standalone Implementation
+    testRuntime ("com.sun.xml.bind:jaxb-impl:$jaxbVersion")
+    testRuntime ("com.sun.xml.bind:jaxb-core:$jaxbVersion")
+
     testRuntime ("javax.activation:activation:1.1.1") // JSR-925 Java Beans Activation Framework
 }
