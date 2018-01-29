@@ -25,11 +25,6 @@ public class ProductId implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return value.toString();
-    }
-
-    @Override
     public boolean equals(Object other) {
         if (this == other) {
             return true;
@@ -47,5 +42,10 @@ public class ProductId implements Serializable {
 
     public UUID getValue() {
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("product=%s", value);
     }
 }
