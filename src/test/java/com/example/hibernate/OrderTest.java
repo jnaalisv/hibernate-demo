@@ -4,8 +4,8 @@ import com.example.domain.Customer;
 import com.example.domain.Order;
 import com.example.domain.OrderLine;
 import com.example.domain.Product;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
@@ -15,7 +15,7 @@ public class OrderTest extends AbstractHibernateTest {
     private Product crystallineCPU;
     private Customer customer;
 
-    @Before
+    @BeforeEach
     public void before() {
         doInTransaction(session ->
                 session

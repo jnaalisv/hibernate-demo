@@ -6,23 +6,26 @@ repositories {
     jcenter()
 }
 
-val hibernateVersion by extra {"5.2.14.Final"}
-val postgreSqlVersion by extra {"42.2.1"}
-val hikariCpVersion by extra {"2.7.8"}
-val jaxbVersion by extra {"2.3.0"}
+val hibernateVersion = "5.2.14.Final"
+val postgreSqlVersion = "42.2.1"
+val hikariCpVersion = "2.7.8"
+val jaxbVersion = "2.3.0"
+var JUnitVersion = "5.1.0"
 
 dependencies {
 
     compile ("org.slf4j:slf4j-api:1.7.25")
     compile ("org.hibernate:hibernate-core:$hibernateVersion")
 
-    testCompile ("junit:junit:4.12")
+    runtime ("org.postgresql:postgresql:$postgreSqlVersion")
+    runtime ("com.zaxxer:HikariCP:$hikariCpVersion")
+    runtime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
+    runtime ("ch.qos.logback:logback-classic:1.2.3")
+
+    testCompile ("org.junit.jupiter:junit-jupiter-api:$JUnitVersion")
     testCompile ("org.assertj:assertj-core:3.9.0")
 
-    testRuntime ("org.postgresql:postgresql:$postgreSqlVersion")
-    testRuntime ("com.zaxxer:HikariCP:$hikariCpVersion")
-    testRuntime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
-    testRuntime ("ch.qos.logback:logback-classic:1.2.3")
+    testRuntime ("org.junit.jupiter:junit-jupiter-engine:$JUnitVersion")
 
     // Java EE modules used to be included with the JRE. They were deprecated in Java SE 9 with the
     // declared intent to remove them in a future release.
@@ -32,3 +35,7 @@ dependencies {
 
     testRuntime ("javax.activation:activation:1.1.1") // JSR-925 Java Beans Activation Framework
 }
+
+val test: Test by tasks
+test.useJUnitPlatform()
+

@@ -2,8 +2,8 @@ package com.example.hibernate;
 
 import com.example.domain.Product;
 import org.hibernate.type.PostgresUUIDType;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
@@ -13,7 +13,7 @@ public class ProductTest extends AbstractHibernateTest {
 
     private Product product;
 
-    @Before
+    @BeforeEach
     public void before() {
         doInTransaction(session ->
                 session
