@@ -6,9 +6,9 @@ repositories {
     jcenter()
 }
 
-val hibernateVersion by extra {"5.2.13.Final"}
+val hibernateVersion by extra {"5.2.14.Final"}
 val postgreSqlVersion by extra {"42.2.1"}
-val hikariCpVersion by extra {"2.7.7"}
+val hikariCpVersion by extra {"2.7.8"}
 val jaxbVersion by extra {"2.3.0"}
 
 dependencies {
