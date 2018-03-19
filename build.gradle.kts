@@ -8,7 +8,7 @@ repositories {
 }
 
 val hibernateVersion = "5.2.15.Final"
-val postgreSqlVersion = "42.2.1"
+val postgreSqlVersion = "42.2.2"
 val hikariCpVersion = "2.7.8"
 val jaxbVersion = "2.3.0"
 var JUnitVersion = "5.1.0"
