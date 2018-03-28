@@ -49,4 +49,8 @@ tasks {
         useJUnitPlatform()
         finalizedBy(jacocoTestReport)
     }
+
+    "compileJava" (JavaCompile::class) {
+        options.compilerArgs = listOf("-Xlint:all", "-Werror")
+    }
 }
