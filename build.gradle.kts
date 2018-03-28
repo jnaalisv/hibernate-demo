@@ -37,9 +37,6 @@ dependencies {
     testRuntime ("javax.activation:activation:1.1.1") // JSR-925 Java Beans Activation Framework
 }
 
-val test: Test by tasks
-test.useJUnitPlatform()
-
 val jacocoTestReport: JacocoReport by tasks
 jacocoTestReport.reports {
     xml.isEnabled = false
@@ -47,4 +44,9 @@ jacocoTestReport.reports {
     html.destination = file("${buildDir}/jacocoHtml")
 }
 
-test.finalizedBy(jacocoTestReport)
+tasks {
+    "test" (Test::class) {
+        useJUnitPlatform()
+        finalizedBy(jacocoTestReport)
+    }
+}
