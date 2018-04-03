@@ -10,6 +10,8 @@ import java.util.UUID;
 @Embeddable
 public class ProductId implements Serializable {
 
+    private static final long serialVersionUID = 1;
+
     @GeneratedValue
     @Column( columnDefinition = "uuid", updatable = false, name = "id" )
     private UUID value;
