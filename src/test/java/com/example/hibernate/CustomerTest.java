@@ -7,7 +7,7 @@ public class CustomerTest extends AbstractHibernateTest {
 
     @Test
     public void shouldPersistCustomerAndGenerateNewId() {
-        Customer regularCustomer = new Customer("Regular Customer");
+        var regularCustomer = new Customer("Regular Customer");
 
         assertTableEmpty("Customer");
 

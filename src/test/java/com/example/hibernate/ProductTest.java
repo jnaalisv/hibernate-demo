@@ -5,8 +5,6 @@ import org.hibernate.type.PostgresUUIDType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Optional;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductTest extends AbstractHibernateTest {
@@ -43,7 +41,7 @@ public class ProductTest extends AbstractHibernateTest {
     public void queryByUuidWorksWithHqlQuery() {
         doInTransaction(session -> {
 
-            Optional<Product> maybeProduct = session
+            var maybeProduct = session
                     .createQuery("from Product where id = :id", Product.class)
                     .setParameter("id", product.getId().getValue(), PostgresUUIDType.INSTANCE)
                     .uniqueResultOptional();
@@ -56,7 +54,7 @@ public class ProductTest extends AbstractHibernateTest {
     public void queryByUuidWorksWithSqlQuery() {
         doInTransaction(session -> {
 
-            Optional<Product> maybeProduct = session
+            var maybeProduct = session
                     .createNativeQuery("select * from product where id = :id", Product.class)
                     .setParameter("id", product.getId().getValue(), PostgresUUIDType.INSTANCE)
                     .uniqueResultOptional();

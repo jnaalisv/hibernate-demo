@@ -3,7 +3,6 @@ package com.example.hibernate;
 import org.hibernate.Session;
 import org.hibernate.type.PostgresUUIDType;
 
-import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
 
@@ -21,7 +20,7 @@ public abstract class AbstractHibernateTest {
 
     protected static void assertRowsInTable(String tableName, String where, int expectedRows) {
         doInTransaction(session -> {
-            List rows = session
+            var rows = session
                     .createQuery("from "+tableName+" where "+where)
                     .list();
 
@@ -31,7 +30,7 @@ public abstract class AbstractHibernateTest {
 
     protected static  void assertRowsInTable(String tableName, Long id, int expectedRows) {
         doInTransaction(session -> {
-            List rows = session
+            var rows = session
                     .createNativeQuery("select from "+tableName+" where id = :id")
                     .setParameter("id", id)
                     .list();
@@ -42,7 +41,7 @@ public abstract class AbstractHibernateTest {
 
     protected static  void assertRowsInTable(String tableName, UUID id, int expectedRows) {
         doInTransaction(session -> {
-            List rows = session
+            var rows = session
                     .createNativeQuery("select from "+tableName+" where id = :id")
                     .setParameter("id", id, PostgresUUIDType.INSTANCE)
                     .list();
@@ -52,7 +51,7 @@ public abstract class AbstractHibernateTest {
     }
 
     protected static void doInTransaction(Consumer<Session> sessionConsumer) {
-        Session session = SessionFactoryHolder.getSessionFactory().openSession();
+        var session = SessionFactoryHolder.getSessionFactory().openSession();
         session.beginTransaction();
 
         sessionConsumer.accept(session);

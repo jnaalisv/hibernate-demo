@@ -14,7 +14,7 @@ public final class SessionFactoryHolder {
 
     static {
         // A SessionFactory is set up once for an application!
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+        final var registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
                 // .loadProperties would read from std properties file
                 .build();

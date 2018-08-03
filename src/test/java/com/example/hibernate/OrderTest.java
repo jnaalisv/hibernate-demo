@@ -36,7 +36,7 @@ public class OrderTest extends AbstractHibernateTest {
 
     @Test
     public void shouldCreateAnOrder() {
-        Order order = Order
+        var order = Order
                 .forCustomer(customer.getId())
                 .withOrderLine(new OrderLine(ferriteMemoryCell.getId(), new BigDecimal("2")))
                 .withOrderLine(new OrderLine(crystallineCPU.getId(), new BigDecimal("1")));
