@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-public class OrderTest extends AbstractHibernateTest {
+class OrderTest extends AbstractHibernateTest {
 
     private Product ferriteMemoryCell;
     private Product crystallineCPU;
     private Customer customer;
 
     @BeforeEach
-    public void before() {
+    void before() {
         doInTransaction(session ->
                 session
                         .createNativeQuery("truncate table product;")
@@ -35,7 +35,7 @@ public class OrderTest extends AbstractHibernateTest {
     }
 
     @Test
-    public void shouldCreateAnOrder() {
+    void shouldCreateAnOrder() {
         var order = Order
                 .forCustomer(customer.getId())
                 .withOrderLine(new OrderLine(ferriteMemoryCell.getId(), new BigDecimal("2")))

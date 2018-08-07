@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ProductTest extends AbstractHibernateTest {
+class ProductTest extends AbstractHibernateTest {
 
     private Product product;
 
     @BeforeEach
-    public void before() {
+    void before() {
         doInTransaction(session ->
                 session
                     .createNativeQuery("delete from product;")
@@ -27,7 +27,7 @@ public class ProductTest extends AbstractHibernateTest {
     }
 
     @Test
-    public void shouldSaveAndFetchAProduct() {
+    void shouldSaveAndFetchAProduct() {
         assertRowsInTable("product", product.getId().getValue(), 1);
 
         doInTransaction(session -> {
@@ -38,7 +38,7 @@ public class ProductTest extends AbstractHibernateTest {
 
 
     @Test
-    public void queryByUuidWorksWithHqlQuery() {
+    void queryByUuidWorksWithHqlQuery() {
         doInTransaction(session -> {
 
             var maybeProduct = session
@@ -51,7 +51,7 @@ public class ProductTest extends AbstractHibernateTest {
     }
 
     @Test
-    public void queryByUuidWorksWithSqlQuery() {
+    void queryByUuidWorksWithSqlQuery() {
         doInTransaction(session -> {
 
             var maybeProduct = session

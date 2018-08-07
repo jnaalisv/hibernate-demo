@@ -8,17 +8,17 @@ import java.util.function.Consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public abstract class AbstractHibernateTest {
+abstract class AbstractHibernateTest {
 
-    protected static void assertTableEmpty(String tableName) {
+    static void assertTableEmpty(String tableName) {
         assertRowsInTable(tableName, "1=1", 0);
     }
 
-    protected static void assertExistsById(String tableName, long id) {
+    static void assertExistsById(String tableName, long id) {
         assertRowsInTable(tableName, id, 1);
     }
 
-    protected static void assertRowsInTable(String tableName, String where, int expectedRows) {
+    static void assertRowsInTable(String tableName, String where, int expectedRows) {
         doInTransaction(session -> {
             var rows = session
                     .createQuery("from "+tableName+" where "+where)
@@ -28,7 +28,7 @@ public abstract class AbstractHibernateTest {
         });
     }
 
-    protected static  void assertRowsInTable(String tableName, Long id, int expectedRows) {
+    static  void assertRowsInTable(String tableName, Long id, int expectedRows) {
         doInTransaction(session -> {
             var rows = session
                     .createNativeQuery("select from "+tableName+" where id = :id")
@@ -39,7 +39,7 @@ public abstract class AbstractHibernateTest {
         });
     }
 
-    protected static  void assertRowsInTable(String tableName, UUID id, int expectedRows) {
+    static  void assertRowsInTable(String tableName, UUID id, int expectedRows) {
         doInTransaction(session -> {
             var rows = session
                     .createNativeQuery("select from "+tableName+" where id = :id")
@@ -50,7 +50,7 @@ public abstract class AbstractHibernateTest {
         });
     }
 
-    protected static void doInTransaction(Consumer<Session> sessionConsumer) {
+    static void doInTransaction(Consumer<Session> sessionConsumer) {
         var session = SessionFactoryHolder.getSessionFactory().openSession();
         session.beginTransaction();
 
