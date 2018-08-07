@@ -24,8 +24,8 @@ dependencies {
     runtime ("ch.qos.logback:logback-classic:1.2.3")
 
     testCompile ("org.junit.jupiter:junit-jupiter-api:$JUnitVersion")
+    testCompile ("org.junit.jupiter:junit-jupiter-params:$JUnitVersion")
     testCompile ("org.assertj:assertj-core:3.9.0")
-
     testRuntime ("org.junit.jupiter:junit-jupiter-engine:$JUnitVersion")
 
     // Java EE modules used to be included with the JRE. They were deprecated in Java SE 9 with the
