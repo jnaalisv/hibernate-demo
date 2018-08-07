@@ -6,7 +6,7 @@ import org.hibernate.type.PostgresUUIDType;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 abstract class AbstractHibernateTest {
 
@@ -24,7 +24,7 @@ abstract class AbstractHibernateTest {
                     .createQuery("from "+tableName+" where "+where)
                     .list();
 
-            assertThat(rows.size()).isEqualTo(expectedRows);
+            assertEquals(rows.size(), expectedRows);
         });
     }
 
@@ -35,7 +35,7 @@ abstract class AbstractHibernateTest {
                     .setParameter("id", id)
                     .list();
 
-            assertThat(rows.size()).isEqualTo(expectedRows);
+            assertEquals(rows.size(), expectedRows);
         });
     }
 
@@ -46,7 +46,7 @@ abstract class AbstractHibernateTest {
                     .setParameter("id", id, PostgresUUIDType.INSTANCE)
                     .list();
 
-            assertThat(rows.size()).isEqualTo(expectedRows);
+            assertEquals(rows.size(), expectedRows);
         });
     }
 

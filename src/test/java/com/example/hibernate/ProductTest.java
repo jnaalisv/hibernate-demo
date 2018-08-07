@@ -7,7 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ProductTest extends AbstractHibernateTest {
 
@@ -42,7 +43,7 @@ class ProductTest extends AbstractHibernateTest {
         void isFoundById() {
             doInTransaction(session -> {
                 Product product1 = session.find(Product.class, id);
-                assertThat(product1.getId()).isEqualTo(id);
+                assertEquals(product1.getId(), id);
             });
         }
 
@@ -55,7 +56,7 @@ class ProductTest extends AbstractHibernateTest {
                         .setParameter("id", id.getValue(), PostgresUUIDType.INSTANCE)
                         .uniqueResultOptional();
 
-                assertThat(maybeProduct.isPresent()).isTrue();
+                assertTrue(maybeProduct.isPresent());
             });
         }
 
@@ -68,7 +69,7 @@ class ProductTest extends AbstractHibernateTest {
                         .setParameter("id", id.getValue(), PostgresUUIDType.INSTANCE)
                         .uniqueResultOptional();
 
-                assertThat(maybeProduct.isPresent()).isTrue();
+                assertTrue(maybeProduct.isPresent());
             });
         }
 
