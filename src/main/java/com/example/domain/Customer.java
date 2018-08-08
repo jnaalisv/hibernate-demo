@@ -25,4 +25,9 @@ public class Customer {
     public long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Customer(%d %s)", id, name);
+    }
 }
