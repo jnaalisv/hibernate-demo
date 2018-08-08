@@ -3,6 +3,8 @@ package com.example.hibernate;
 import com.example.domain.Customer;
 import org.junit.jupiter.api.Test;
 
+import static com.example.hibernate.HibernateSessionManager.doInTransaction;
+
 class CustomerTest extends AbstractHibernateTest {
 
     @Test
@@ -11,9 +13,9 @@ class CustomerTest extends AbstractHibernateTest {
 
         assertTableEmpty("Customer");
 
-        doInTransaction(session -> {
-            session.save(regularCustomer);
-        });
+        doInTransaction(session ->
+            session.save(regularCustomer)
+        );
 
         assertExistsById("Customer", regularCustomer.getId());
     }

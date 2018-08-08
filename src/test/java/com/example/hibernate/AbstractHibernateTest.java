@@ -1,11 +1,10 @@
 package com.example.hibernate;
 
-import org.hibernate.Session;
 import org.hibernate.type.PostgresUUIDType;
 
 import java.util.UUID;
-import java.util.function.Consumer;
 
+import static com.example.hibernate.HibernateSessionManager.doInTransaction;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 abstract class AbstractHibernateTest {
@@ -48,15 +47,5 @@ abstract class AbstractHibernateTest {
 
             assertEquals(rows.size(), expectedRows);
         });
-    }
-
-    static void doInTransaction(Consumer<Session> sessionConsumer) {
-        var session = SessionFactoryHolder.getSessionFactory().openSession();
-        session.beginTransaction();
-
-        sessionConsumer.accept(session);
-
-        session.getTransaction().commit();
-        session.close();
     }
 }

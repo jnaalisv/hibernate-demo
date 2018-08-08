@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
+import static com.example.hibernate.HibernateSessionManager.doInTransaction;
+
 class OrderTest extends AbstractHibernateTest {
 
     private Product ferriteMemoryCell;
