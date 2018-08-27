@@ -4,7 +4,7 @@
               class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>
-                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{40}: %msg%n%ex{full, sun, java.lang, java.util}
+                %d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{40}: %msg%n%ex{full}
             </pattern>
         </encoder>
     </appender>
