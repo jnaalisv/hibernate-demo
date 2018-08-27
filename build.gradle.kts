@@ -57,3 +57,7 @@ tasks {
         options.compilerArgs = listOf("-Xlint:all", "-Werror")
     }
 }
+
+jacoco {
+    toolVersion = "0.8.2" // latest jacoco with support for java11
+}
