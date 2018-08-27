@@ -14,7 +14,6 @@ repositories {
 val hibernateVersion = "5.3.5.Final"
 val postgreSqlVersion = "42.2.5"
 val hikariCpVersion = "3.2.0"
-val jaxbVersion = "2.3.0"
 var JUnitVersion = "5.2.0"
 
 dependencies {
@@ -28,9 +27,9 @@ dependencies {
     runtime ("ch.qos.logback:logback-classic:1.2.3")
 
     // JAXB (JSR 222) Standalone Implementation
-    runtime ("javax.xml.bind:jaxb-api:$jaxbVersion")
-    runtime ("com.sun.xml.bind:jaxb-impl:$jaxbVersion")
-    runtime ("com.sun.xml.bind:jaxb-core:$jaxbVersion")
+    runtime ("javax.xml.bind:jaxb-api:2.4.0-b180725.0427")
+    runtime ("com.sun.xml.bind:jaxb-impl:2.4.0-b180725.0644")
+    runtime ("com.sun.xml.bind:jaxb-core:2.3.0.1")
 
     // JSR-925 Java Beans Activation Framework
     runtime ("javax.activation:activation:1.1.1")
