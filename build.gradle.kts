@@ -30,10 +30,7 @@ dependencies {
     runtime ("javax.xml.bind:jaxb-api:2.4.0-b180725.0427")
     runtime ("com.sun.xml.bind:jaxb-impl:2.4.0-b180725.0644")
     runtime ("com.sun.xml.bind:jaxb-core:2.3.0.1")
-
-    // JSR-925 Java Beans Activation Framework
-    runtime ("javax.activation:activation:1.1.1")
-
+    
     testCompile ("org.junit.jupiter:junit-jupiter-api:$JUnitVersion")
     testCompile ("org.junit.jupiter:junit-jupiter-params:$JUnitVersion")
     testRuntime ("org.junit.jupiter:junit-jupiter-engine:$JUnitVersion")
