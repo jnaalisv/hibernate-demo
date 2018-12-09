@@ -71,6 +71,7 @@ class ProductTest extends AbstractHibernateTest {
                         .uniqueResultOptional();
 
                 assertTrue(maybeProduct.isPresent());
+                assertEquals(id, maybeProduct.get().getId());
             });
         }
 
