@@ -11,7 +11,7 @@ repositories {
     jcenter()
 }
 
-val hibernateVersion = "5.4.0.CR1"
+val hibernateVersion = "6.0.0.Alpha1"
 val postgreSqlVersion = "42.2.+"
 val hikariCpVersion = "3.2.+"
 var JUnitVersion = "5.3.+"
@@ -19,11 +19,11 @@ var JUnitVersion = "5.3.+"
 dependencies {
 
     compile ("org.slf4j:slf4j-api:1.7.25")
-    compile ("org.hibernate:hibernate-core:$hibernateVersion")
+    compile ("org.hibernate.orm:hibernate-core:$hibernateVersion")
 
     runtime ("org.postgresql:postgresql:$postgreSqlVersion")
     runtime ("com.zaxxer:HikariCP:$hikariCpVersion")
-    runtime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
+    runtime ("org.hibernate.orm:hibernate-hikaricp:$hibernateVersion")
     runtime ("ch.qos.logback:logback-classic:1.2.3")
 
     testCompile ("org.junit.jupiter:junit-jupiter-api:$JUnitVersion")
