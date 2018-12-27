@@ -14,7 +14,7 @@ repositories {
 val hibernateVersion = "5.4.0.Final"
 val postgreSqlVersion = "42.2.5"
 val hikariCpVersion = "3.2.0"
-var JUnitVersion = "5.3.2"
+var JUnitVersion = "5.4.0-M1"
 
 dependencies {
 
@@ -26,9 +26,7 @@ dependencies {
     runtime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
     runtime ("ch.qos.logback:logback-classic:1.2.3")
 
-    testCompile ("org.junit.jupiter:junit-jupiter-api:$JUnitVersion")
-    testCompile ("org.junit.jupiter:junit-jupiter-params:$JUnitVersion")
-    testRuntime ("org.junit.jupiter:junit-jupiter-engine:$JUnitVersion")
+    testCompile ("org.junit.jupiter:junit-jupiter:$JUnitVersion")
 }
 
 val jacocoTestReport: JacocoReport by tasks
