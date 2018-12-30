@@ -14,17 +14,19 @@ repositories {
 val hibernateVersion = "5.4.0.Final"
 val postgreSqlVersion = "42.2.5"
 val hikariCpVersion = "3.2.0"
-var JUnitVersion = "5.4.0-M1"
+val JUnitVersion = "5.4.0-M1"
+val slf4jVersion = "1.7.25"
+val logbackVersion = "1.2.3"
 
 dependencies {
 
-    compile ("org.slf4j:slf4j-api:1.7.25")
+    compile ("org.slf4j:slf4j-api:$slf4jVersion")
     compile ("org.hibernate:hibernate-core:$hibernateVersion")
 
     runtime ("org.postgresql:postgresql:$postgreSqlVersion")
     runtime ("com.zaxxer:HikariCP:$hikariCpVersion")
     runtime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
-    runtime ("ch.qos.logback:logback-classic:1.2.3")
+    runtime ("ch.qos.logback:logback-classic:$logbackVersion")
 
     testCompile ("org.junit.jupiter:junit-jupiter:$JUnitVersion")
 }
