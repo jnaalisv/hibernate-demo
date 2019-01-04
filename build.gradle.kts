@@ -20,15 +20,15 @@ val logbackVersion = "1.2.3"
 
 dependencies {
 
-    compile ("org.slf4j:slf4j-api:$slf4jVersion")
-    compile ("org.hibernate:hibernate-core:$hibernateVersion")
+    implementation ("org.slf4j:slf4j-api:$slf4jVersion")
+    implementation ("org.hibernate:hibernate-core:$hibernateVersion")
 
-    runtime ("org.postgresql:postgresql:$postgreSqlVersion")
-    runtime ("com.zaxxer:HikariCP:$hikariCpVersion")
-    runtime ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
-    runtime ("ch.qos.logback:logback-classic:$logbackVersion")
+    runtimeOnly ("org.postgresql:postgresql:$postgreSqlVersion")
+    runtimeOnly ("com.zaxxer:HikariCP:$hikariCpVersion")
+    runtimeOnly ("org.hibernate:hibernate-hikaricp:$hibernateVersion")
+    runtimeOnly ("ch.qos.logback:logback-classic:$logbackVersion")
 
-    testCompile ("org.junit.jupiter:junit-jupiter:$JUnitVersion")
+    testImplementation ("org.junit.jupiter:junit-jupiter:$JUnitVersion")
 }
 
 tasks {
