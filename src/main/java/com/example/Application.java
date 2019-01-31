@@ -2,13 +2,13 @@ package com.example;
 
 import com.example.application.CustomerService;
 import com.example.domain.Customer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
 public class Application {
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LogManager.getLogger(Application.class);
 
     private static final CustomerService customerService = new CustomerService();
 

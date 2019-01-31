@@ -1,13 +1,13 @@
 package com.example.hibernate;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public final class SessionFactoryHolder {
-    private static final Logger logger = LoggerFactory.getLogger(SessionFactoryHolder.class);
+    private static final Logger logger = LogManager.getLogger(SessionFactoryHolder.class);
 
     private static final SessionFactory sessionFactory;
 
