@@ -12,9 +12,9 @@ repositories {
 }
 
 val hibernateVersion = "5.4.4.Final"
-val postgreSqlVersion = "42.2.6"
-val hikariCpVersion = "3.3.1"
-val JUnitVersion = "5.5.1"
+val postgreSqlVersion = "42.2.8"
+val hikariCpVersion = "3.4.0"
+val JUnitVersion = "5.5.2"
 val log4j2Version = "2.11.1"
 
 dependencies {
