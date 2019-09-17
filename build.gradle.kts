@@ -15,7 +15,7 @@ val hibernateVersion = "5.4.5.Final"
 val postgreSqlVersion = "42.2.8"
 val hikariCpVersion = "3.4.0"
 val JUnitVersion = "5.5.2"
-val log4j2Version = "2.11.1"
+val log4j2Version = "2.12.1"
 
 dependencies {
     implementation ("org.apache.logging.log4j:log4j-api:$log4j2Version")
