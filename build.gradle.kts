@@ -11,7 +11,7 @@ repositories {
     jcenter()
 }
 
-val hibernateVersion = "5.4.4.Final"
+val hibernateVersion = "5.4.5.Final"
 val postgreSqlVersion = "42.2.8"
 val hikariCpVersion = "3.4.0"
 val JUnitVersion = "5.5.2"
