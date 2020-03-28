@@ -11,11 +11,11 @@ repositories {
     jcenter()
 }
 
-val hibernateVersion = "5.4.10.Final"
-val postgreSqlVersion = "42.2.9"
-val hikariCpVersion = "3.4.2"
-val JUnitVersion = "5.6.0"
-val log4j2Version = "2.13.0"
+val hibernateVersion = "5.4.13.Final"
+val postgreSqlVersion = "42.2.11"
+val hikariCpVersion = "3.4.3"
+val JUnitVersion = "5.6.1"
+val log4j2Version = "2.13.1"
 
 dependencies {
     implementation ("org.apache.logging.log4j:log4j-api:$log4j2Version")
