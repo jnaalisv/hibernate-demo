@@ -40,11 +40,17 @@ tasks {
     }
 
     test {
+        jvmArgs = listOf("--enable-preview")
         useJUnitPlatform()
         finalizedBy(jacocoTestReport)
     }
+}
 
-    compileJava {
-        options.compilerArgs = listOf("-Xlint:all", "-Werror")
+
+tasks.withType<JavaCompile>().configureEach {
+    options.apply {
+        encoding = "UTF-8"
+        compilerArgs.add("-Xlint:all")
+        compilerArgs.add("--enable-preview")
     }
 }

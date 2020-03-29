@@ -40,9 +40,7 @@ public class OrderLine {
     public boolean equals(Object other) {
         if (other == this) return true;
 
-        if (other instanceof OrderLine) {
-
-            OrderLine otherOrder = (OrderLine)other;
+        if (other instanceof OrderLine otherOrder) {
 
             return otherOrder.id == id
                     && Objects.equals(otherOrder.productId, productId)

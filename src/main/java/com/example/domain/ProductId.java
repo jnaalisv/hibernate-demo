@@ -31,8 +31,8 @@ public class ProductId implements Serializable {
         if (this == other) {
             return true;
         }
-        if (other instanceof ProductId) {
-            return Objects.equals(((ProductId)other).value, value);
+        if (other instanceof ProductId otherProductId) {
+            return Objects.equals(otherProductId.value, value);
         }
         return false;
     }
