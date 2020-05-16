@@ -11,10 +11,10 @@ repositories {
     jcenter()
 }
 
-val hibernateVersion = "5.4.13.Final"
-val postgreSqlVersion = "42.2.11"
-val hikariCpVersion = "3.4.2"
-val JUnitVersion = "5.6.1"
+val hibernateVersion = "5.4.15.Final"
+val postgreSqlVersion = "42.2.12"
+val hikariCpVersion = "3.4.5"
+val JUnitVersion = "5.6.2"
 val log4j2Version = "2.13.1"
 
 dependencies {
