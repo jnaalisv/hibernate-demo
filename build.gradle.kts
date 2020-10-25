@@ -4,7 +4,7 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_14
+    sourceCompatibility = JavaVersion.VERSION_15
 }
 
 repositories {
@@ -28,6 +28,10 @@ dependencies {
     runtimeOnly ("org.apache.logging.log4j:log4j-slf4j-impl:$log4j2Version")
 
     testImplementation ("org.junit.jupiter:junit-jupiter:$JUnitVersion")
+}
+
+jacoco {
+    toolVersion = "0.8.6"
 }
 
 tasks {
