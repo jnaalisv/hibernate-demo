@@ -8,7 +8,7 @@ java {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 val hibernateVersion = "5.4.30.Final"
