@@ -33,9 +33,9 @@ dependencies {
 tasks {
     jacocoTestReport {
         reports {
-            xml.isEnabled = false
-            csv.isEnabled = true
-            html.destination = file("$buildDir/jacocoHtml")
+            xml.required.set(false)
+            csv.required.set(true)
+            html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
         }
     }
 
