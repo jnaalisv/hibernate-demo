@@ -11,10 +11,10 @@ repositories {
     mavenCentral()
 }
 
-val hibernateVersion = "5.4.30.Final"
+val hibernateVersion = "5.4.32.Final"
 val postgreSqlVersion = "42.2.19"
 val hikariCpVersion = "4.0.3"
-val JUnitVersion = "5.7.1"
+val JUnitVersion = "5.7.2"
 val log4j2Version = "2.13.2"
 
 dependencies {
@@ -28,10 +28,6 @@ dependencies {
     runtimeOnly ("org.apache.logging.log4j:log4j-slf4j-impl:$log4j2Version")
 
     testImplementation ("org.junit.jupiter:junit-jupiter:$JUnitVersion")
-}
-
-jacoco {
-    toolVersion = "0.8.6"
 }
 
 tasks {
