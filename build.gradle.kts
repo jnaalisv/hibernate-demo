@@ -11,9 +11,9 @@ repositories {
     mavenCentral()
 }
 
-val hibernateVersion = "5.4.32.Final"
-val postgreSqlVersion = "42.2.19"
-val hikariCpVersion = "4.0.3"
+val hibernateVersion = "5.5.6.Final"
+val postgreSqlVersion = "42.2.24"
+val hikariCpVersion = "5.0.0"
 val JUnitVersion = "5.8.1"
 val log4j2Version = "2.14.1"
 
