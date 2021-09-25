@@ -4,7 +4,7 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_16
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -14,8 +14,8 @@ repositories {
 val hibernateVersion = "5.4.32.Final"
 val postgreSqlVersion = "42.2.19"
 val hikariCpVersion = "4.0.3"
-val JUnitVersion = "5.7.2"
-val log4j2Version = "2.13.2"
+val JUnitVersion = "5.8.1"
+val log4j2Version = "2.14.1"
 
 dependencies {
     implementation ("org.apache.logging.log4j:log4j-api:$log4j2Version")
