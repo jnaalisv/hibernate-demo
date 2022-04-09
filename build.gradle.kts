@@ -12,10 +12,10 @@ repositories {
 }
 
 val hibernateVersion = "5.6.3.Final"
-val postgreSqlVersion = "42.3.1"
+val postgreSqlVersion = "42.3.3"
 val hikariCpVersion = "5.0.0"
 val JUnitVersion = "5.8.2"
-val log4j2Version = "2.17.0"
+val log4j2Version = "2.17.2"
 
 dependencies {
     implementation ("org.apache.logging.log4j:log4j-api:$log4j2Version")
